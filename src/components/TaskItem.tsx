@@ -32,7 +32,9 @@ export function TaskItem(props: TaskProps) {
             <div>
                 <input 
                     type="checkbox"
-                    className="appearance-none border-2 transition-colors border-blue-400 hover:bg-blue-600/20 rounded-full h-5 w-5"
+                    className="appearance-none border-2 mt-1 transition-colors border-blue-400 hover:bg-blue-600/20 rounded-full h-5 w-5 checked:bg-purple-600 checked:border-purple-600 checked:hover:bg-purple-400 checked:hover:border-purple-400 relative after:content-[''] after:w-[9px] after:h-[5px] after:absolute after:border-white after:border-r-2 after:border-t-2 after:left-[4px] after:top-[5px] after:rotate-[135deg] after:opacity-0 checked:after:opacity-100"
+                    checked={taskCompleted}
+                    onClick={handleCompleteTask}
                 />
             </div>
             <div>

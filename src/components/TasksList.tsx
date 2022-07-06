@@ -1,4 +1,6 @@
-import { Clipboard } from "./ClipboardIcon";
+import { NoTasks } from "./NoTasks";
+import { TaskItem } from "./TaskItem";
+
 
 export function TasksList(){
     return(
@@ -21,20 +23,15 @@ export function TasksList(){
                         >
                             Concluídas 
                             <span className="bg-gray-400 rounded-full text-gray-200 px-2 ml-2 py-1">
-                                0
+                                2 de 5
                             </span>
                         </strong>
                     </div>
                 </div>
             </header>
             <div className="border-t rounded-lg border-gray-400 mt-6 min-h-[300px]">
-                <div className="flex flex-col items-center justify-center mt-12">
-                    <Clipboard />
-                    <strong
-                        className="text-gray-300 mt-4"
-                    >Você ainda não tem tarefas cadastradas</strong>
-                    <span className="text-gray-300">Crie tarefas e organize seus items a fazer</span>
-                </div>
+               <TaskItem />
+               <TaskItem />
             </div>
         </div>
     )

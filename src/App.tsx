@@ -13,7 +13,7 @@ function App() {
           className="flex"
         >
           <input 
-            className="flex-1 gap-2 bg-gray-500 border border-gray-700 p-4 rounded-lg text-gray-300"
+            className="flex-1 gap-2 bg-gray-500 border border-gray-700 p-4 rounded-lg text-gray-100 placeholder-gray-300 focus-within:border-purple-600"
             type="text" 
             placeholder="Adicione uma nova tarefa" />
           <button

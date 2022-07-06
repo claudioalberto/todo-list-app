@@ -2,30 +2,41 @@ import { v4 as uuidv4 } from 'uuid';
 import { PlusCircle } from "phosphor-react"
 import { Header } from "./components/Header"
 import { TasksList } from "./components/TasksList"
-import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, InvalidEvent, useEffect, useState } from 'react';
 import { NoTasks } from './components/NoTasks';
 
 
-const source = [
-  {
-    id: uuidv4(),
-    title: 'Terminar o desafio',
-    isCompleted: true,
-  },
-  {
-    id: uuidv4(),
-    title: 'Terminar de estudar ReactJS',
-    isCompleted: false,
-  }
-]
-
+interface Task{
+  id: string;
+  title: string;
+  isCompleted: boolean;
+}
 
 function App() {
 
+  if (localStorage.getItem('tasks') === null) localStorage.setItem('tasks', '[]')
+  let dataLocal = localStorage.getItem('tasks');
+  // console.log(dataLocal);
+  
 
-  const [tasks, setTasks] = useState(source)
+  let sourceInitial : Array<Task> = [];
+  
+  if (dataLocal) {
+    sourceInitial = JSON.parse(dataLocal.toString());
+   
+    
+  }
+
+
+
+  const [tasks, setTasks] = useState(sourceInitial)
   const [newTaskValue, setNewTaskValue] = useState('')
   const tasksCompleted = tasks.filter(task => task.isCompleted).length;
+
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+  }, [tasks])
 
   function handleNewTask(event: FormEvent) {
     event.preventDefault()
@@ -34,7 +45,9 @@ function App() {
       title: newTaskValue,
       isCompleted: false,
     }, ...tasks])
+    
     setNewTaskValue('')
+    
   }
 
   function completeTask(taskID: string){

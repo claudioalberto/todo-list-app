@@ -2,7 +2,7 @@ import { Clipboard } from "./ClipboardIcon";
 
 export function NoTasks() {
     return (
-        <div className="flex border-t rounded-lg border-gray-400 mt-6 flex-col items-center text-center justify-center pt-16">
+        <div className="flex border-t rounded-lg border-gray-400 mt-6 flex-col items-center text-center justify-center py-16">
             <Clipboard />
             <strong
                 className="text-gray-300 mt-4"

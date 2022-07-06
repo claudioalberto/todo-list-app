@@ -67,7 +67,7 @@ function App() {
   return (
     <div className="">
       <Header />
-      <main className="mx-auto max-w-[738px] -mt-8 px-8 md:px-0">
+      <main className="mx-auto md:max-w-[738px] -mt-8 px-8 md:px-0">
         <form
           className="flex"
           onSubmit={handleNewTask}
@@ -84,12 +84,13 @@ function App() {
           <button
             className="flex ml-2 items-center gap-2 text-white bg-blue-600 p-4 rounded-lg transition-colors hover:bg-blue-400 "
           >
-            Criar <PlusCircle size={16} />
+            <span className="hidden md:block">Criar</span>
+            <PlusCircle className="text-2xl md:text-xl" />
           </button>
         </form>
         <div className="mt-16">
           <header>
-            <div className="flex justify-between px-4">
+            <div className="flex justify-between md:px-4">
               <div>
                 <strong
                   className="text-sm text-blue-400"

@@ -14,18 +14,21 @@ interface Tasks {
 }
 
 export function TasksList({ taskList, onDeleteTask, onCompletedTask }: Tasks) {
+    const tasksCompleted = taskList.filter(task => task.isCompleted).length;
     return (
-        <div className="mt-6 min-h-[300px]">
-            {taskList.map(task => (
-                <TaskItem
-                    key={task.id}
-                    id={task.id}
-                    title={task.title}
-                    isCompleted={task.isCompleted}
-                    onDeleteTask={onDeleteTask}
-                    onCompletedTask={onCompletedTask}
-                />
-            ))}
-        </div>
+        
+            <div className="mt-6 min-h-[300px]">
+                {taskList.map(task => (
+                    <TaskItem
+                        key={task.id}
+                        id={task.id}
+                        title={task.title}
+                        isCompleted={task.isCompleted}
+                        onDeleteTask={onDeleteTask}
+                        onCompletedTask={onCompletedTask}
+                    />
+                ))}
+            </div>
+        
     )
 }

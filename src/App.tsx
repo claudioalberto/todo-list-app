@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="">
       <Header />
-      <main className="mx-auto max-w-[738px] -mt-8">
+      <main className="mx-auto max-w-[738px] -mt-8 px-8 md:px-0">
         <form 
           className="flex"
         >

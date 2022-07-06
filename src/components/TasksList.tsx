@@ -30,8 +30,16 @@ export function TasksList(){
                 </div>
             </header>
             <div className="border-t rounded-lg border-gray-400 mt-6 min-h-[300px]">
-               <TaskItem />
-               <TaskItem />
+               <TaskItem 
+                    id="1"
+                    title="Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer."
+                    completed={true}
+                />
+               <TaskItem 
+                    id="2"
+                    title="Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer."
+                    completed={false}
+                />
             </div>
         </div>
     )

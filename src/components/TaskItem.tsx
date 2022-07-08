@@ -1,6 +1,6 @@
 import classNames from "classnames";
-import { Check, Circle, RadioButton, Trash } from "phosphor-react";
-import { useState } from "react";
+import { Trash } from "phosphor-react";
+
 
 interface TaskProps {
     id: string;
@@ -22,7 +22,6 @@ export function TaskItem({ id, title, isCompleted, onDeleteTask, onCompletedTask
     function handleDeleteTask() {
         onDeleteTask(id)
     }
-
 
     return (
         <div

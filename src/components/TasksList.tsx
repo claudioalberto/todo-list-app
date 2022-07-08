@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { NoTasks } from "./NoTasks";
-import { TaskItem } from "./TaskItem";
+import { useDrag } from 'react-dnd';
+import { TaskItem } from './TaskItem';
+
 
 interface Task {
     id: string;
